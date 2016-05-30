@@ -1,0 +1,67 @@
+{
+  "recipe_ubuntu": {
+    "id": "recipe_ubuntu",
+    "name": "UBUNTU_JDK8",
+    "creator": "che",
+    "type": "docker",
+    "script": "FROM codenvy/ubuntu_jdk8",
+    "tags": [
+      "java",
+      "ubuntu",
+      "cbuild",
+      "nmap",
+      "maven",
+      "curl",
+      "tomcat",
+      "gwt"
+    ],
+    "acl": [
+      {
+        "user": "*",
+        "actions": [
+          "read"
+        ]
+      }
+    ]
+  },
+  "reciperlekfaij2cavyovp": {
+    "id": "reciperlekfaij2cavyovp",
+    "name": "generated-Java",
+    "creator": "che",
+    "type": "docker",
+    "script": "FROM codenvy/ubuntu_jdk8",
+    "tags": []
+  },
+  "recipeaxejnkm1e2c4e825": {
+    "id": "recipeaxejnkm1e2c4e825",
+    "name": "generated-TomEE",
+    "creator": "che",
+    "type": "docker",
+    "script": "FROM tomitribe/ubuntu_tomee_173_jdk8",
+    "tags": []
+  },
+  "recipe_debian": {
+    "id": "recipe_debian",
+    "name": "DEBIAN_JDK8",
+    "creator": "che",
+    "type": "docker",
+    "script": "FROM codenvy/debian_jdk8",
+    "tags": [
+      "debian",
+      "java",
+      "cbuild",
+      "nmap",
+      "maven",
+      "curl",
+      "tomcat"
+    ],
+    "acl": [
+      {
+        "user": "*",
+        "actions": [
+          "read"
+        ]
+      }
+    ]
+  }
+}
