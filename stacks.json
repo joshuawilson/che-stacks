@@ -3,15 +3,15 @@
     "id": "java-default",
     "creator": "ide",
     "name": "Java",
-    "description": "Default Java Stack with JDK 8, Maven and Tomcat.",
+    "description": "Default Java Stack with JDK 8, Maven and EAP.",
     "scope": "general",
     "tags": [
       "Java",
       "JDK",
       "Maven",
-      "Tomcat",
+      "JBoss EAP",
       "Subversion",
-      "RHEL-Joshua",
+      "RHEL",
       "Git"
     ],
     "components": [
@@ -137,7 +137,7 @@
     "creator": "ide",
     "name": "Android",
     "description": "Default Android Stack with Java 1.8, Maven 3.2.3, Android (21 api level).",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Android",
       "Ubuntu",
@@ -204,7 +204,7 @@
     "creator": "ide",
     "name": "ASP.net",
     "description": "Default ASP.net Stack with DNX and libuv.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Debian",
       "ASP",
@@ -434,7 +434,7 @@
     "creator": "ide",
     "name": "PHP",
     "description": "Default PHP Stack with PHP 5.5, most popular extensions and composer.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Ubuntu",
       "Git",
@@ -577,7 +577,7 @@
     "creator": "ide",
     "name": "Rails",
     "description": "Default Rails Stack with Ruby 2.3.0, Rails 4.2.6, Bundler 1.11.2.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Ruby",
       "Rails",
@@ -1001,7 +1001,7 @@
     "creator": "tomitribe",
     "name": "TomEE",
     "description": "Default Java Stack with JDK 8, Maven and Apache TomEE 1.7.3.",
-    "scope": "advanced",
+    "scope": "general",
     "tags": [
       "Ubuntu",
       "Java",
