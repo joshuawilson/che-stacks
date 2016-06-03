@@ -1,18 +1,95 @@
 [
   {
-    "id": "java-default",
+    "id": "javaee-default",
     "creator": "ide",
-    "name": "Java",
-    "description": "Default Java Stack with JDK 8, Maven and EAP.",
+    "name": "Java EE",
+    "description": "Default Java EE Stack with JDK 8, Maven and JBoss EAP on RHEL.",
     "scope": "general",
     "tags": [
       "Java",
       "JDK",
       "Maven",
       "JBoss EAP",
-      "Subversion",
       "RHEL",
-      "Git"
+      "git"
+    ],
+    "components": [
+      {
+        "name": "JDK",
+        "version": "1.8.0_45"
+      },
+      {
+        "name": "Maven",
+        "version": "3.2.2"
+      },
+      {
+        "name": "EAP",
+        "version": "7.0.0.Beta"
+      }
+    ],
+    "source": {
+      "type": "image",
+      "origin": "joshuawilson/cherheleap"
+    },
+    "workspaceConfig": {
+      "environments": [
+        {
+          "name": "default",
+          "recipe": null,
+          "machineConfigs": [
+            {
+              "name": "default",
+              "limits": {
+                "ram": 1000
+              },
+              "source": {
+                "location": "stub",
+                "type": "dockerfile"
+              },
+              "type": "docker",
+              "dev": true
+            }
+          ]
+        }
+      ],
+      "name": "default",
+      "defaultEnv": "default",
+      "description": null,
+      "commands": [
+        {
+          "commandLine": "mvn clean install -f ${current.project.path}",
+          "name": "newMaven",
+          "type": "mvn"
+        }
+      ]
+    },
+    "acl": [
+      {
+        "user": "*",
+        "actions": [
+          "read"
+        ]
+      }
+    ],
+    "stackIcon": {
+      "name": "type-java.svg",
+      "mediaType": "image/svg+xml"
+    }
+  },
+  {
+    "id": "java-default",
+    "creator": "ide",
+    "name": "Java",
+    "description": "Default Java Stack with JDK 8, Maven and Tomcat.",
+    "scope": "advanced",
+    "tags": [
+      "Java",
+      "JDK",
+      "Maven",
+      "Tomcat",
+      "Subversion",
+      "Ubuntu",
+      "git"
     ],
     "components": [
       {
@@ -82,11 +159,11 @@
     "creator": "ide",
     "name": "Blank",
     "description": "Default Blank Stack.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Blank",
       "Ubuntu",
-      "Git",
+      "git",
       "Subversion"
     ],
     "components": [],
@@ -141,7 +218,7 @@
     "tags": [
       "Android",
       "Ubuntu",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -202,17 +279,14 @@
   {
     "id": "aspnet-default",
     "creator": "ide",
-    "name": "ASP.net",
-    "description": "Default ASP.net Stack with DNX and libuv.",
-    "scope": "advanced",
+    "name": ".NET",
+    "description": "Default ASP.NET Stack.",
+    "scope": "general",
     "tags": [
-      "Debian",
+      "RHEL",
       "ASP",
-      "Git",
-      "mono",
-      "libc6",
-      "dnx",
-      "libuv"
+      "git",
+      "EF"
     ],
     "components": [
       {
@@ -279,13 +353,13 @@
     "creator": "ide",
     "name": "C++",
     "description": "Default C++ Stack with C++, gcc 4.8.4, GNU Make 3.81.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "C++",
       "gcc",
       "make",
       "Ubuntu",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -350,8 +424,8 @@
     "description": "Default Node Stack with Node 0.12.",
     "scope": "general",
     "tags": [
-      "Ubuntu",
-      "Git",
+      "RHEL",
+      "git",
       "Node.JS",
       "NPM",
       "Gulp",
@@ -437,7 +511,7 @@
     "scope": "advanced",
     "tags": [
       "Ubuntu",
-      "Git",
+      "git",
       "PHP",
       "mysql",
       "sqlite",
@@ -513,12 +587,12 @@
     "creator": "ide",
     "name": "Python",
     "description": "Default Python Stack with Python 3.5.1, pip 8.1.1.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Python 3.5",
       "pip",
       "Ubuntu",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -577,13 +651,13 @@
     "creator": "ide",
     "name": "Rails",
     "description": "Default Rails Stack with Ruby 2.3.0, Rails 4.2.6, Bundler 1.11.2.",
-    "scope": "advanced",
+    "scope": "general",
     "tags": [
       "Ruby",
       "Rails",
       "Bundler",
-      "Ubuntu",
-      "Git"
+      "RHEL",
+      "git"
     ],
     "components": [
       {
@@ -706,7 +780,7 @@
       "Maven",
       "Tomcat",
       "CentOS",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -787,7 +861,7 @@
       "Maven",
       "Tomcat",
       "Debian",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -866,7 +940,7 @@
       "Python 2.7",
       "pip",
       "Ubuntu",
-      "Git"
+      "git"
     ],
     "components": [
       {
@@ -1001,7 +1075,7 @@
     "creator": "tomitribe",
     "name": "TomEE",
     "description": "Default Java Stack with JDK 8, Maven and Apache TomEE 1.7.3.",
-    "scope": "general",
+    "scope": "advanced",
     "tags": [
       "Ubuntu",
       "Java",
@@ -1009,7 +1083,7 @@
       "Maven",
       "TomEE",
       "Subversion",
-      "Git"
+      "git"
     ],
     "components": [
       {

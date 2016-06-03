@@ -651,7 +651,7 @@
     "name": "web-javaee-jaxrs",
     "displayName": "web-javaee-jaxrs",
     "path": "/web-javaee-jaxrs",
-    "description": "A basic example demonstrating JAXRS running on Apache TomEE",
+    "description": "A basic example demonstrating JAXRS.",
     "projectType": "maven",
     "mixins": [],
     "attributes": {
@@ -715,6 +715,76 @@
       "java",
 	  "javaee",
 	  "jaxrs"
+    ]
+  },
+  {
+    "name": "jboss-eap-quickstarts",
+    "displayName": "jboss-eap-quickstarts",
+    "path": "/jboss-eap-quickstarts",
+    "description": "A series of examples or quickstarts using JBoss EAP.",
+    "projectType": "maven",
+    "mixins": [],
+    "attributes": {
+      "language": [
+        "java"
+      ]
+    },
+    "modules": [],
+    "problems": [],
+    "source": {
+      "type": "git",
+      "location": "https://github.com/jboss-developer/jboss-eap-quickstarts.git",
+      "parameters": {}
+    },
+    "commands": [
+      {
+        "name": "build",
+        "type": "mvn",
+        "commandLine": "mvn -f ${current.project.relpath} clean package",
+        "attributes": {
+          "previewUrl": ""
+        }
+      },
+      {
+        "name": "start JBoss",
+        "type": "custom",
+        "commandLine": "sh /home/user/jboss-eap-7.0/bin/standalone.sh",
+        "attributes": {
+          "previewUrl": "http://${server.port.8080}"
+        }
+      },
+      {
+        "name": "build and deploy",
+        "type": "mvn",
+        "commandLine": "mvn -f ${current.project.path} clean package wildfly:deploy",
+        "attributes": {
+          "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
+        }
+      },
+      {
+        "name": "undeploy",
+        "type": "mvn",
+        "commandLine": "mvn -f ${current.project.path} wildfly:undeploy",
+        "attributes": {
+          "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
+        }
+      },
+      {
+        "name": "debug",
+        "type": "mvn",
+        "commandLine": "mvn -f ${current.project.path} clean install wildfly:deploy",
+        "attributes": {
+          "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
+        }
+      }
+    ],
+    "links": [],
+    "category": "Samples",
+    "tags": [
+      "maven",
+      "java",
+      "javaee",
+      "jaxrs"
     ]
   }
 ]
