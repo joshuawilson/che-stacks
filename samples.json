@@ -740,7 +740,7 @@
       {
         "name": "build",
         "type": "mvn",
-        "commandLine": "mvn -f ${current.project.relpath} clean package",
+        "commandLine": "mvn -f ${current.project.relpath}/helloworld-html5 clean package",
         "attributes": {
           "previewUrl": ""
         }
@@ -754,9 +754,17 @@
         }
       },
       {
-        "name": "build and deploy",
+        "name": "JBoss CLI",
+        "type": "custom",
+        "commandLine": "sh /home/user/jboss-eap-7.0/bin/jboss-cli.sh --connect",
+        "attributes": {
+          "previewUrl": ""
+        }
+      },
+      {
+        "name": "build and deploy relpath",
         "type": "mvn",
-        "commandLine": "mvn -f ${current.project.path} clean package wildfly:deploy",
+        "commandLine": "mvn -f ${current.project.path}/helloworld-html5 clean package wildfly:deploy",
         "attributes": {
           "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
         }
@@ -764,15 +772,15 @@
       {
         "name": "undeploy",
         "type": "mvn",
-        "commandLine": "mvn -f ${current.project.path} wildfly:undeploy",
+        "commandLine": "mvn wildfly:undeploy",
         "attributes": {
-          "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
+          "previewUrl": ""
         }
       },
       {
         "name": "debug",
         "type": "mvn",
-        "commandLine": "mvn -f ${current.project.path} clean install wildfly:deploy",
+        "commandLine": "mvn -f ${current.project.path}/helloworld-html5 clean install wildfly:deploy",
         "attributes": {
           "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
         }
